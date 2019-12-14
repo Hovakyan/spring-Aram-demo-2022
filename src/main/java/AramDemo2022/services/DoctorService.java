@@ -1,4 +1,11 @@
 package AramDemo2022.services;
 
+import AramDemo2022.common.DoctorCreateDTO;
+import AramDemo2022.common.DoctorDTO;
+
 public interface DoctorService {
+
+
+    DoctorDTO create(DoctorCreateDTO doctorCreateDTO);
+
 }
