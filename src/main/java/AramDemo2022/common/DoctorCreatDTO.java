@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class DoctorDTO {
+
+public class DoctorCreatDTO {
 
     private String docName;
 
