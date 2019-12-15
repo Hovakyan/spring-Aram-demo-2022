@@ -29,12 +29,11 @@ public class DoctorConvert {
         doctorDTO.setId(entity.getId());
         return doctorDTO;}
 
-     public  DoctorEntity convert(DoctorUpdateDTO doctorUpdateDTO){
+     public  void convert(DoctorUpdateDTO doctorUpdateDTO) {
 
-        DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
-        doctorEntity.setDocName(doctorUpdateDTO.getDoctorName());
+         DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
+         doctorEntity.setDocName(doctorUpdateDTO.getName());
 
-        return doctorEntity;
      }
 
 

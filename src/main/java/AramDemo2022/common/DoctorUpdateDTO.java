@@ -9,7 +9,7 @@ public class DoctorUpdateDTO {
 
     private Long id;
 
-    private String doctorName;
+    private String Name;
 
 
 

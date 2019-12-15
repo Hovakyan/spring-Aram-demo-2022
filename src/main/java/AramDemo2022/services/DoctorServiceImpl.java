@@ -38,11 +38,11 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDTO update(DoctorUpdateDTO doctorUpdateDTO) {
-
-        DoctorEntity doctorEntity = doctorConvert.convert(doctorUpdateDTO);
+        DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
+        doctorConvert.convert(doctorUpdateDTO);
         doctorRepository.save(doctorEntity);
-       DoctorDTO doctorDTO = doctorConvert.convert(doctorUpdateDTO);
+        DoctorDTO doctorDTO = doctorConvert.convert(doctorEntity);
 
-return  null;
+        return doctorDTO;
     }
 }
