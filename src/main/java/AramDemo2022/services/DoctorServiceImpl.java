@@ -2,6 +2,7 @@ package AramDemo2022.services;
 
 import AramDemo2022.common.DoctorCreatDTO;
 import AramDemo2022.common.DoctorDTO;
+import AramDemo2022.common.DoctorUpdateDTO;
 import AramDemo2022.convertation.DoctorConvert;
 import AramDemo2022.entity.DoctorEntity;
 import AramDemo2022.repository.DoctorRepository;
@@ -19,9 +20,29 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDTO creat(DoctorCreatDTO doctorCreatDTO) {
+        DoctorEntity doctorEntity = doctorConvert.convert(doctorCreatDTO);
+        doctorRepository.save(doctorEntity);
+        DoctorDTO doctorDTO = doctorConvert.convert(doctorEntity);
 
-        doctorRepository.save(doctorConvert.convert(doctorCreatDTO));
+        return doctorDTO;
+    }
 
-        return null ;
+    @Override
+    public DoctorDTO get(Long doctorId) {
+
+        DoctorEntity entity = doctorRepository.getOne(doctorId);
+        DoctorDTO doctorDTO = doctorConvert.convert(entity);
+
+        return doctorDTO;
+    }
+
+    @Override
+    public DoctorDTO update(DoctorUpdateDTO doctorUpdateDTO) {
+
+        DoctorEntity doctorEntity = doctorConvert.convert(doctorUpdateDTO);
+        doctorRepository.save(doctorEntity);
+       DoctorDTO doctorDTO = doctorConvert.convert(doctorUpdateDTO);
+
+return  null;
     }
 }
