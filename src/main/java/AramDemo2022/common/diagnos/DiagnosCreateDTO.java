@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class DiagnosCreateDTO {
 
+    private Long id;
+
     private String name;
 
 }
