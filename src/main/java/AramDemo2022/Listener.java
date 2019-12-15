@@ -1,7 +1,7 @@
 package AramDemo2022;
 
-import AramDemo2022.common.DoctorCreatDTO;
-import AramDemo2022.common.DoctorDTO;
+import AramDemo2022.common.doctor.DoctorCreatDTO;
+import AramDemo2022.common.doctor.DoctorDTO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

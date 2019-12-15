@@ -1,8 +1,8 @@
 package AramDemo2022.convertation;
 
-import AramDemo2022.common.DoctorCreatDTO;
-import AramDemo2022.common.DoctorDTO;
-import AramDemo2022.common.DoctorUpdateDTO;
+import AramDemo2022.common.doctor.DoctorCreatDTO;
+import AramDemo2022.common.doctor.DoctorDTO;
+import AramDemo2022.common.doctor.DoctorUpdateDTO;
 import AramDemo2022.entity.DoctorEntity;
 import AramDemo2022.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

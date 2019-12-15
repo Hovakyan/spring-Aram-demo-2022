@@ -1,4 +1,4 @@
-package AramDemo2022.common;
+package AramDemo2022.common.doctor;
 
 import lombok.Getter;
 import lombok.Setter;

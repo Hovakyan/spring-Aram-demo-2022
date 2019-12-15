@@ -1,14 +1,11 @@
-package AramDemo2022.common;
+package AramDemo2022.common.patient;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-
-public class DoctorCreatDTO {
-
+public class PatientDTO {
+    private Long id;
     private String name;
-
-
 }
