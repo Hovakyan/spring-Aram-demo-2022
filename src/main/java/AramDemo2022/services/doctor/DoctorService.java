@@ -1,4 +1,4 @@
-package AramDemo2022.services;
+package AramDemo2022.services.doctor;
 
 import AramDemo2022.common.doctor.DoctorCreatDTO;
 import AramDemo2022.common.doctor.DoctorDTO;

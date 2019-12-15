@@ -3,7 +3,7 @@ package AramDemo2022.api;
 import AramDemo2022.common.doctor.DoctorCreatDTO;
 import AramDemo2022.common.doctor.DoctorDTO;
 import AramDemo2022.common.doctor.DoctorUpdateDTO;
-import AramDemo2022.services.DoctorService;
+import AramDemo2022.services.doctor.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

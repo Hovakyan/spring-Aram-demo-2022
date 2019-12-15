@@ -1,4 +1,4 @@
-package AramDemo2022.services;
+package AramDemo2022.services.doctor;
 
 import AramDemo2022.common.doctor.DoctorCreatDTO;
 import AramDemo2022.common.doctor.DoctorDTO;
@@ -6,6 +6,7 @@ import AramDemo2022.common.doctor.DoctorUpdateDTO;
 import AramDemo2022.convertation.DoctorConvert;
 import AramDemo2022.entity.DoctorEntity;
 import AramDemo2022.repository.DoctorRepository;
+import AramDemo2022.services.doctor.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

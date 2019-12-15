@@ -9,4 +9,5 @@ public class PatientUpdateDTO {
 
     private Long id;
     private String name;
+    private String surName;
 }
