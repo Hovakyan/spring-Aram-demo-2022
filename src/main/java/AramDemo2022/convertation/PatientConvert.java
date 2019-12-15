@@ -15,7 +15,7 @@ public class PatientConvert {
       @Autowired
     PatientRepository patientRepository;
 
-    private PatientDTO convert(PatientEntity patientEntity) {
+    public PatientDTO convert(PatientEntity patientEntity) {
         PatientDTO patientDTO = new PatientDTO();
         patientDTO.setId(patientEntity.getId());
         patientDTO.setName(patientEntity.getName());
@@ -24,7 +24,7 @@ public class PatientConvert {
         return patientDTO;
     }
 
-    private PatientEntity convert(PatientCreateDTO patientCreateDTO) {
+    public PatientEntity convert(PatientCreateDTO patientCreateDTO) {
         PatientEntity patientEntity = new PatientEntity();
         patientEntity.setId(patientCreateDTO.getId());
         patientEntity.setName(patientCreateDTO.getName());
@@ -32,7 +32,7 @@ public class PatientConvert {
         return patientEntity;
     }
 
-    private void convert(PatientUpdateDTO patientUpdateDTO) {
+    public void convert(PatientUpdateDTO patientUpdateDTO) {
 
         PatientEntity patientEntity = patientRepository.getOne(patientUpdateDTO.getId());
         patientEntity.setName(patientUpdateDTO.getName());

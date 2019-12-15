@@ -3,9 +3,10 @@ package AramDemo2022.api;
 import AramDemo2022.common.patient.PatientCreateDTO;
 import AramDemo2022.common.patient.PatientDTO;
 import AramDemo2022.common.patient.PatientUpdateDTO;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("patient")
+@RequestMapping("/patient")
 public interface PatientController {
 
 
