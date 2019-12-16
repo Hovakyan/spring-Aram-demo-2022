@@ -1,5 +1,7 @@
 package AramDemo2022.api;
 
+import AramDemo2022.common.doctor.DoctorCreatDTO;
+import AramDemo2022.common.doctor.DoctorDTO;
 import AramDemo2022.common.patient.PatientCreateDTO;
 import AramDemo2022.common.patient.PatientDTO;
 import AramDemo2022.common.patient.PatientUpdateDTO;
@@ -11,7 +13,7 @@ public interface PatientController {
 
 
     @PostMapping("")
-    PatientDTO create(@RequestBody PatientCreateDTO patientCreateDTO);
+    PatientDTO create(@RequestBody PatientCreateDTO patientCreateDTO,DoctorCreatDTO doctorCreatDTO);
 
     @GetMapping(path = "/{id}")
     PatientDTO get(@PathVariable("id") Long id);

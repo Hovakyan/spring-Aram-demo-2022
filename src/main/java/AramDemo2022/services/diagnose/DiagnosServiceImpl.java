@@ -7,7 +7,9 @@ import AramDemo2022.convertation.DiagnosConvert;
 import AramDemo2022.entity.diagnose.DiagnosEntity;
 import AramDemo2022.repository.DiagnosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DiagnosServiceImpl implements DiagnosService {
 
    @Autowired
@@ -25,15 +27,18 @@ public class DiagnosServiceImpl implements DiagnosService {
 
     @Override
     public DiagnoseDTO get(Long id) {
-        DiagnoseDTO diagnoseDTO = diagnosConvert.convert(diagnosRepository.getOne(id));
+        DiagnosEntity diagnosEntity = diagnosRepository.getOne(id);
+        DiagnoseDTO diagnoseDTO = diagnosConvert.convert(diagnosEntity);
         return diagnoseDTO;
     }
 
     @Override
     public DiagnoseDTO update(DiagnosUpdateDTO diagnosUpdateDTO) {
 
-
-
-        return null;
+    DiagnosEntity diagnosEntity = diagnosRepository.getOne(diagnosUpdateDTO.getId());
+    diagnosConvert.convert(diagnosUpdateDTO);
+    diagnosRepository.save(diagnosEntity);
+    DiagnoseDTO diagnoseDTO = diagnosConvert.convert(diagnosEntity);
+        return diagnoseDTO;
     }
 }

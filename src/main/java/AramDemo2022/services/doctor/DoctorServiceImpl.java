@@ -5,6 +5,7 @@ import AramDemo2022.common.doctor.DoctorDTO;
 import AramDemo2022.common.doctor.DoctorUpdateDTO;
 import AramDemo2022.convertation.DoctorConvert;
 import AramDemo2022.entity.DoctorEntity;
+import AramDemo2022.entity.PatientEntity;
 import AramDemo2022.repository.DoctorRepository;
 import AramDemo2022.services.doctor.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorDTO;
     }
 
+
+
     @Override
     public DoctorDTO get(Long doctorId) {
 
@@ -39,7 +42,7 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public DoctorDTO update(DoctorUpdateDTO doctorUpdateDTO) {
         DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
-        doctorConvert.convert(doctorUpdateDTO);
+//        doctorConvert.convert(doctorUpdateDTO);
         doctorRepository.save(doctorEntity);
         DoctorDTO doctorDTO = doctorConvert.convert(doctorEntity);
 

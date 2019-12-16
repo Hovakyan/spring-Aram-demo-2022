@@ -4,19 +4,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+
 
 @Entity
+@Table(name = "patients")
 @Getter
 @Setter
 @NoArgsConstructor
 public class PatientEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
@@ -26,4 +26,7 @@ public class PatientEntity {
 
 
 
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id")
+    DoctorEntity doctorEntity;
 }

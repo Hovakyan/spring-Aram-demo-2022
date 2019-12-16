@@ -1,38 +1,32 @@
 package AramDemo2022.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "doctors")
 @Getter
 @Setter
+@NoArgsConstructor
 public class DoctorEntity {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long Id;
 
 
     @Column(nullable = false)
-    private String docName;
+    private String name;
 
 
-    public Long getId() {
-        return Id;
-    }
+    @OneToMany(mappedBy = "doctorEntity")
+    List<PatientEntity> patientEntityList;
 
-    public void setId(Long id) {
-        Id = id;
-    }
 
-    public String getDocName() {
-        return docName;
-    }
-
-    public void setDocName(String docName) {
-        this.docName = docName;
-    }
 }

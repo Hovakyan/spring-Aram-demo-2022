@@ -17,7 +17,7 @@ public class DoctorConvert {
 
     public DoctorEntity convert(DoctorCreatDTO doctorCreatDTO){
         DoctorEntity doctorEntity = new DoctorEntity();
-        doctorEntity.setDocName(doctorCreatDTO.getName());
+        doctorEntity.setName(doctorCreatDTO.getName());
 
         return doctorEntity;
     }
@@ -25,14 +25,14 @@ public class DoctorConvert {
 
     public DoctorDTO convert(DoctorEntity entity) {
         DoctorDTO doctorDTO = new DoctorDTO();
-        doctorDTO.setDocName(entity.getDocName());
+        doctorDTO.setDocName(entity.getName());
         doctorDTO.setId(entity.getId());
         return doctorDTO;}
 
      public  void convert(DoctorUpdateDTO doctorUpdateDTO) {
 
          DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
-         doctorEntity.setDocName(doctorUpdateDTO.getName());
+         doctorEntity.setName(doctorUpdateDTO.getName());
 
      }
 
