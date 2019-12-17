@@ -33,17 +33,21 @@ public class DiagnosServiceImpl implements DiagnosService {
 
     @Override
     public DiagnoseDTO get(Long id) {
+        log.info("Getting DiagnoseDTO by id",id);
         DiagnoseEntity diagnoseEntity = diagnosRepository.getOne(id);
+        log.info("Returning ConvertDTO with {} body",diagnoseEntity);
         DiagnoseDTO diagnoseDTO = diagnoseConvert.convert(diagnoseEntity);
         return diagnoseDTO;
     }
 
     @Override
     public DiagnoseDTO update(DiagnoseUpdateDOT diagnoseUpdateDOT) {
-
+        log.info("Getting DiagnoseDTO with {} body",diagnoseUpdateDOT);
     DiagnoseEntity diagnoseEntity = diagnosRepository.getOne(diagnoseUpdateDOT.getId());
+        log.info("Renaming fields with {} body",diagnoseUpdateDOT);
     diagnoseConvert.convert(diagnoseUpdateDOT);
     diagnosRepository.save(diagnoseEntity);
+   log.info("Returning ConvertedDTO with {} body",diagnoseEntity);
     DiagnoseDTO diagnoseDTO = diagnoseConvert.convert(diagnoseEntity);
         return diagnoseDTO;
     }

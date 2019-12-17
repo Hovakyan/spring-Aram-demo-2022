@@ -29,15 +29,20 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDTO getDoctorById(Long doctorId) {
+        log.info("Getting DiagnoseDTO by id",doctorId);
         DoctorEntity entity = doctorRepository.getOne(doctorId);
+        log.info("Returning ConvertDTO with {} body",entity);
         return doctorConvert.convert(entity);
     }
 
     @Override
     public DoctorDTO update(DoctorUpdateDTO doctorUpdateDTO) {
+        log.info("Getting DoctorDTO with {} body",doctorUpdateDTO);
         DoctorEntity doctorEntity = doctorRepository.getOne(doctorUpdateDTO.getId());
-//        doctorConvert.convert(doctorUpdateDTO);
+        log.info("Renaming fields with {} body",doctorUpdateDTO);
+        doctorConvert.convert(doctorUpdateDTO);
         doctorRepository.save(doctorEntity);
+        log.info("Returning ConvertedDTO with {} body",doctorEntity);
         return doctorConvert.convert(doctorEntity);
     }
 }
